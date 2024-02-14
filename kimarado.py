@@ -44,4 +44,4 @@ for pair in pairs:
             break
 
     if pair[0] / pair[1] == shoudEqual:
-        print(f'Found it! It\'s {pair[0]}/{pair[1]}, which is equal to {shoudEqual}')
+        print(f'Found one! It\'s {pair[0]}/{pair[1]}, which is equal to {shoudEqual}')
