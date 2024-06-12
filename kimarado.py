@@ -1,35 +1,32 @@
 #!/bin/python3
 
-# Az összes négyjegyű szám, kivéve amiben tutira van 0
-a = [i for i in range(1111,10000)]
-
-# Az összes nullát tartalmazó szám eldobása
-b = [i for i in a if "0" not in str(i)]
+# Az összes nullát nem tartalmazó négyjegyű szám
+a = [i for i in range(1111,10000) if "0" not in str(i)]
 
 # Az összes egyedi szám
-c = []
+b = []
 
-for i in b:
+for i in a:
     # Megszámoljuk, hányszor fordul elő egy-egy számjegy az adott számban
-    d = [0 for _ in range(9)]
+    c = [0 for _ in range(9)]
     for j in str(i):
-        d[int(j)-1] += 1
+        c[int(j)-1] += 1
 
     w = True
     # Ha egynél többször, a számot nem rakjuk be az egyedi számok listájába
-    for j in d:
+    for j in c:
         if j > 1:
             w = False
 
     # Ha nem, belerakjuk
     if w:
-        c.append(i)
+        b.append(i)
 
 # Egyedi számpárok listája
 ps = []
 
-for i in c:
-    for j in c:
+for i in b:
+    for j in b:
         w = True
         # Ha a második szám tartalmazza az első szám bármelyik számjegyét, nem helyezzük az egyedi párok listájába
         for k in range(len(str(i))):
